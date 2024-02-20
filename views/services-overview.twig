@@ -1,0 +1,65 @@
+<section class="services-overview-section">
+	<div class="services-overview-wrapper">
+		<div class="container">
+			<div class="section-title dark">
+				<h2>{{post.services_section_title}}</h2>
+				<p>{{post.services_section_tagline}}</p>
+			</div>
+			<div class="discover-our-services-wrapper our-services-overview">
+			<div class="row">
+				{% if post.services_cards %}
+					{% for item in post.services_cards %}	
+						{% if post.if_2_column %}
+							<div class="col-lg-6 col-md-6 col-12">
+							<a href="#">
+								<div class="item">
+									<div class="image">
+										<img src="{{item.service_card_image}}" alt="Plumbing">
+										<div class="overlay-text">
+											<h3>{{item.service_card_title}}</h3>
+										</div>
+									</div>
+									<div class="item-content">	
+										<p>{{item.service_card_description}}</p>
+										{% if item.service_category %}
+										<ul>
+										{% for category in item.service_category %}	
+											<li>{{category.service_category_item}}</li>
+										{% endfor %}
+										</ul>
+									{% endif %}
+									</div>
+								</div>
+							</a>
+						</div>
+						{% else %}
+							<div class="col-lg-4 col-md-6 col-12">
+							<a href="#">
+								<div class="item">
+									<div class="image">
+										<img src="{{item.service_card_image}}" alt="Plumbing">
+										<div class="overlay-text">
+											<h3>{{item.service_card_title}}</h3>
+										</div>
+									</div>
+									<div class="item-content">	
+										<p>{{item.service_card_description}}</p>
+										{% if item.service_category %}
+										<ul>
+										{% for category in item.service_category %}	
+											<li>{{category.service_category_item}}</li>
+										{% endfor %}
+										</ul>
+									{% endif %}
+									</div>
+								</div>
+							</a>
+						</div>
+						{% endif %}
+					{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+		</div>
+	</div>
+</section>

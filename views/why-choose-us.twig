@@ -1,0 +1,24 @@
+<section class="why-choose-us section">
+    <div class="container">
+        <div class="section-title dark">
+            <h2>{{post.why_choose_us_title}}</h2>
+        </div>
+        <div class="why-choose-us-cards">
+            <div class="why-choose-us-card">
+                {% if post.why_choose_us_lists %}
+                    {% for item in post.why_choose_us_lists %}	
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-12">
+                                <img src="{{item.why_choose_us_image}}" alt="Icon">
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-12">
+                                <h3>{{item.why_choose_us_title}}</h3>
+                                <p>{{item.why_choose_us_description}}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

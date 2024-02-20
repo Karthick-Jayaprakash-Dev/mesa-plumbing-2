@@ -1,0 +1,24 @@
+<section class="denver-exp-section section p-bt-0 bg-image" style="background-image:url('{{site.url}}/wp-content/uploads/2024/02/Frame-28815-1-1.png')">
+	<div class="container">
+		<div class="denver-exp-wrapper">
+			<div class="section-title">
+				<h2>{{post.denver_home_experience_title}}</h2>
+				<p>{{post.denver_home_experience_tagline}}</p>
+			</div>
+			<div class="row">
+				{% for item in post.denver_home_experience_repeater %}
+					<div class="col-lg-6">
+						<div class="repeater-item">
+							<h3>{{ item.denver_home_experience_repeater_title }}</h3>
+							<p>{{ item.denver_home_experience_repeater_tagline }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<div class="yellow-bg"></div>
+	<div class="overlay-image">
+		<img src="{{site.url}}/wp-content/uploads/2024/02/VAN-removebg-preview-1.png" alt="Van Hero Image">
+	</div>
+</section>

@@ -1,10 +1,31 @@
 {% if menu %}
-	<ul>
+	<ul class="navbar-nav">
 	{% for item in items %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+		<li class="{{ item.classes | join('nav-item') }}">
+			<a class="nav-link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
 			{% include "menu.twig" with {'items': item.children} %}
 		</li>
 	{% endfor %}
 	</ul>
 {% endif %}
+
+
+
+
+      {# <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul> #}
+   
